@@ -9,6 +9,7 @@ public:
     DataBaseManager();
     ~DataBaseManager();
 
+    sqlite3* getDb() const;
     int creerTablesSQLite();
     int sauvegarderBaseDeDonnees(const std::string& nomFichierSource, const std::string& nomFichierDestination);
     int chargerBaseDeDonnees(const std::string& nomFichierSource, const std::string& nomFichierDestination);

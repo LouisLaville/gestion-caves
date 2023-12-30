@@ -1,12 +1,22 @@
-#include "include/DataBaseManager.hpp"
+#include "src/DataBaseManager.cpp"
+#include "src/Cave.cpp"
+#include "src/Vin.cpp"
+#include "src/Fournisseur.cpp"
 
 int main() {
+
     DataBaseManager dbManager;
-
-    // Appeler les fonctions de gestion de la base de données depuis dbManager
-    dbManager.creerTablesSQLite();
-    dbManager.sauvegarderBaseDeDonnees("ma_base_de_donnees.db3", "sauvegarde_ma_base_de_donnees.db3");
-    dbManager.chargerBaseDeDonnees("sauvegarde_ma_base_de_donnees.db3", "ma_base_de_donnees.db3");
-
-    return 0;
+    
 }
+
+
+// POUR RUN LE PROGRAMME : 
+// SE METTRE DANS LE DOSSIER DU PROJET
+// SAISIR : g++ -Iinclude src/DataBaseManager.cpp src/Cave.cpp src/Vin.cpp src/Fournisseur.cpp main.cpp -o mon_programme -lsqlite3
+// PUIS : ./mon_programme 
+
+
+// NE PAS OUBLIER D'INSTALLER SQLITE. POUR CELA :
+// LINUX : sudo apt-get install sqlite3 libsqlite3-dev  
+// WINDOWS : https://www.sqlite.org/download.html 
+// MAC : brew install sqlite3 ( en utilisant homebrew )

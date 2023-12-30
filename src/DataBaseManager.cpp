@@ -20,6 +20,10 @@ DataBaseManager::~DataBaseManager() {
     sqlite3_close(db);
 }
 
+sqlite3* DataBaseManager::getDb() const {
+   
+    return db;
+}
 int DataBaseManager::creerTablesSQLite() {
     
     sqlite3* db;
