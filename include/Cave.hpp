@@ -4,16 +4,12 @@
 #include <string>
 #include <vector>
 
-struct CaveData {
-    int idCave;
-    std::string nom;
-    std::string adresse;
-};
 
 class Cave {
 
     public:
         Cave(sqlite3* db);  
+        
         void ajouterCave(const std::string& nom, const std::string& adresse, int idCave);
         void supprimerCave(int idCave);
         void afficherCaves();

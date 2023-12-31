@@ -5,6 +5,7 @@
 Cave::Cave(sqlite3* db) : db (db){}
 
 void Cave::ajouterCave(const std::string& nom, const std::string& adresse, int idCave) {
+    
     std::string sql;
     sql = "INSERT INTO Cave (idCave, nom, adresse) VALUES (?, ?, ?)";
     
@@ -29,6 +30,7 @@ void Cave::ajouterCave(const std::string& nom, const std::string& adresse, int i
 }
 
 void Cave::supprimerCave(int idCave) {
+    
     std::string sql;
     sql = "DELETE FROM Cave WHERE idCave = ?";
     
@@ -51,6 +53,7 @@ void Cave::supprimerCave(int idCave) {
 }
 
 void Cave::afficherCaves() {
+    
     std::string sql;
     sql = "SELECT * FROM Cave";
     
@@ -72,6 +75,7 @@ void Cave::afficherCaves() {
 }
 
 void Cave::afficherCave(int idCave) {
+    
     std::string sql;
     sql = "SELECT * FROM Cave WHERE idCave = ?";
     

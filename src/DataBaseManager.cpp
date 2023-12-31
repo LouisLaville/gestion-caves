@@ -54,19 +54,19 @@ int DataBaseManager::creerTablesSQLite() {
         std::cerr << "Erreur lors de la création de la table Fournisseur" << std::endl;
     }
 
-    const char* createFournitTable = "CREATE TABLE Fournit (idFournisseur INTEGER NOT NULL, idVin INTEGER NOT NULL, prixBase DECIMAL(10,2), reductions TEXT, PRIMARY KEY (idFournisseur, idVin), FOREIGN KEY (idFournisseur) REFERENCES Fournisseur (idFournisseur), FOREIGN KEY (idVin) REFERENCES Vin (idVin));";
+    const char* createFournitTable = "CREATE TABLE Fournit (idFournisseur INTEGER NOT NULL, idVin INTEGER NOT NULL, prixBase DECIMAL(10,2), PRIMARY KEY (idFournisseur, idVin), FOREIGN KEY (idFournisseur) REFERENCES Fournisseur (idFournisseur), FOREIGN KEY (idVin) REFERENCES Vin (idVin));";
     rc = sqlite3_exec(db, createFournitTable, nullptr, nullptr, nullptr);
     if (rc) {
         std::cerr << "Erreur lors de la création de la table Fournit" << std::endl;
     }
 
-    const char* createCollaboreTable = "CREATE TABLE Collablre (idCave INTEGER NOT NULL, idFournisseur INTEGER NOT NULL, PRIMARY KEY (idCave, idFournisseur), FOREIGN KEY (idCave) REFERENCES Cave (idCave), FOREIGN KEY (idFournisseur) REFERENCES Fournisseur (idFournisseur));";
+    const char* createCollaboreTable = "CREATE TABLE Collabore (idCave INTEGER NOT NULL, idFournisseur INTEGER NOT NULL, idVin INTEGER NOT NULL, quantite INTEGER NOT NULL, marge INTEGER, PRIMARY KEY (idCave, idFournisseur, idVin), FOREIGN KEY (idCave) REFERENCES Cave (idCave), FOREIGN KEY (idFournisseur) REFERENCES Fournisseur (idFournisseur), FOREIGN KEY (idVin) REFERENCES Vin (idVin));";
     rc = sqlite3_exec(db, createCollaboreTable, nullptr, nullptr, nullptr);
     if (rc) {
-        std::cerr << "Erreur lors de la création de la table CaveFournisseur" << std::endl;
+        std::cerr << "Erreur lors de la création de la table Collabore" << std::endl;
     }
 
-    const char* createProposeTable = "CREATE TABLE Propose (idCave INTEGER NOT NULL, idVin INTEGER NOT NULL, prixBase DECIMAL(10,2), marge DECIMAL(5,2), stock INTEGER, PRIMARY KEY (idCave, idVin), FOREIGN KEY (idCave) REFERENCES Cave (idCave), FOREIGN KEY (idVin) REFERENCES Vin (idVin));";
+    const char* createProposeTable = "CREATE TABLE Propose (idCave INTEGER NOT NULL, idVin INTEGER NOT NULL, prixBase DECIMAL(10,2), PRIMARY KEY (idCave, idVin), FOREIGN KEY (idCave) REFERENCES Cave (idCave), FOREIGN KEY (idVin) REFERENCES Vin (idVin));";
     rc = sqlite3_exec(db, createProposeTable, nullptr, nullptr, nullptr);
     if (rc) {
         std::cerr << "Erreur lors de la création de la table Propose" << std::endl;

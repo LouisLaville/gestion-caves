@@ -4,11 +4,6 @@
 #include <string>
 #include <vector>
 
-struct FournisseurData {
-    int idFournisseur;
-    std::string nom;
-    std::string adresse;
-};
 
 class Fournisseur {
 
