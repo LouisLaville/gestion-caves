@@ -5,14 +5,14 @@
 
 int main() {
 
-    DataBaseManager dbManager;
-    
+    DataBaseManager dbManager;   
+
 }
 
 
 // POUR RUN LE PROGRAMME : 
 // SE METTRE DANS LE DOSSIER DU PROJET
-// SAISIR : g++ -Iinclude src/DataBaseManager.cpp src/Cave.cpp src/Vin.cpp src/Fournisseur.cpp main.cpp -o mon_programme -lsqlite3
+// SAISIR : g++ -Iinclude main.cpp -o mon_programme -lsqlite3
 // PUIS : ./mon_programme 
 
 
