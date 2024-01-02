@@ -14,6 +14,7 @@ class Cave {
         void supprimerCave(int idCave);
         void afficherCaves();
         void afficherCave(int idCave);
+        void afficherVinStock(int idCave);
         
     private: 
         sqlite3* db;

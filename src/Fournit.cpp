@@ -3,7 +3,7 @@
 Fournit::Fournit(sqlite3* database) : db(database) {}
 
 
-void Fournit::insererFournit(int idFournisseur, int idVin, double prixBase, const std::string& reductions) {
+void Fournit::insererFournit(int idFournisseur, int idVin, double prixBase) {
     
     // Vérification de l'existence de l'ID du fournisseur
     std::string queryFournisseur = "SELECT COUNT(*) FROM Fournisseur WHERE idFournisseur = ?";
@@ -59,7 +59,7 @@ void Fournit::insererFournit(int idFournisseur, int idVin, double prixBase, cons
         return; 
     }
     sqlite3_finalize(statementDoublon);
-     std::string insertQuery = "INSERT INTO Fournit (idFournisseur, idVin, prixBase, reductions) VALUES (?, ?, ?, ?);";
+     std::string insertQuery = "INSERT INTO Fournit (idFournisseur, idVin, prixBase) VALUES (?, ?, ?);";
     
     sqlite3_stmt* statement;
     int rc = sqlite3_prepare_v2(db, insertQuery.c_str(), -1, &statement, nullptr);

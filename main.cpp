@@ -10,13 +10,13 @@
 int main() {
 
     DataBaseManager dbManager;
-
+   
 }
 
 
 // POUR RUN LE PROGRAMME : 
-// SE METTRE DANS LE DOSSIER DU PROJET
-// SAISIR : g++ -Iinclude main.cpp -o mon_programme -lsqlite3
+// SE METTRE DANS LE DOSSIER DU PROJET DANS LE TERMINAL 
+// SAISIR : g++ -I include main.cpp -o mon_programme -lsqlite3
 // PUIS : ./mon_programme 
 
 
@@ -24,3 +24,6 @@ int main() {
 // LINUX : sudo apt-get install sqlite3 libsqlite3-dev  
 // WINDOWS : https://www.sqlite.org/download.html 
 // MAC : brew install sqlite3 ( en utilisant homebrew )
+
+// DANS VISUAL STUDIO 
+// INSTALLER L'EXTENSION SQLite et SQLite Viewer afin de pouvoir visualier la base de données

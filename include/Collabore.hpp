@@ -4,8 +4,6 @@
 #include <sqlite3.h>
 #include <iostream>
 #include <string>
-#include "propose.hpp"
-#include "gere.hpp"
 
 class Collabore {
 private:
@@ -15,8 +13,8 @@ public:
     Collabore(sqlite3* database);
     ~Collabore();
 
-    void insererCollaboration(int idCave, int idFournisseur, int idVin, int quantite, double prixBase);
+    void insererCollaboration(int idCave, int idFournisseur, int idVin, int quantite, double prixBase,int reduction);
 
 };
 
-#endif // COLLABORE_HPP
+#endif 

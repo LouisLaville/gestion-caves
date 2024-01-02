@@ -12,7 +12,7 @@ private:
 public:
     Fournit(sqlite3* database);
 
-    void insererFournit(int idFournisseur, int idVin, double prixBase, const std::string& reductions);
+    void insererFournit(int idFournisseur, int idVin, double prixBase);
     void supprimerFournit(int idFournisseur, int idVin);
     void afficherFournits();
     void afficherFournit(int idFournisseur, int idVin);
